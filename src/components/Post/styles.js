@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'flex-end',
         zIndex: 2,
+    },
+    rightContainer: {
+        alignSelf: 'flex-end',
     }
 });
 

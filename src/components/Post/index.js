@@ -33,7 +33,9 @@ const Post = () => {
             </TouchableWithoutFeedback>
 
             <View style={styles.uiContainer}>
-                <Text style={{color: "#fff", fontSize: 20}}>Side</Text>
+                <View style={styles.rightContainer}>
+                    <Text style={{color: "#fff", fontSize: 20}}>Side</Text>
+                </View>
                 <Text style={{color: "#fff", fontSize: 20}}>I am the bottom component</Text>
             </View>
 

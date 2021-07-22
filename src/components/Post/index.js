@@ -3,6 +3,7 @@ import styles from "./styles.js";
 import {View, StyleSheet, Button, TouchableWithoutFeedback, Text} from 'react-native';
 import { Video, AVPlaybackStatus } from 'expo-av';
 import {useState} from "react";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 
 
@@ -36,7 +37,19 @@ const Post = () => {
                 <View style={styles.rightContainer}>
                     <Text style={{color: "#fff", fontSize: 20}}>Side</Text>
                 </View>
-                <Text style={{color: "#fff", fontSize: 20}}>I am the bottom component</Text>
+                <View style={styles.bottomContainer}>
+                    <Text style={styles.handle}>@rookas 🛑</Text>
+                    <Text style={{color: "#fff", fontSize: 20}}>🎵 Alive by Kygo</Text>
+                </View>
+
+                <View style={styles.bottomContainer}>
+                </View>
+
+                <View style={styles.icons}>
+                    <FontAwesome5 name="music" size={24} color="black" />
+
+                </View>
+
             </View>
 
         </View>

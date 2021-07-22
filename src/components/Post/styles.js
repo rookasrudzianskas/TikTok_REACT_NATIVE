@@ -20,6 +20,16 @@ const styles = StyleSheet.create({
     },
     rightContainer: {
         alignSelf: 'flex-end',
+    },
+    handle: {
+        color: "#fff",
+        fontSize: 16,
+        fontWeight: "600",
+    },
+    description: {
+        color: "#fff",
+        fontSize: 16,
+        fontWeight: '300',
     }
 });
 

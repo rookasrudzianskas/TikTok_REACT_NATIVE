@@ -3,10 +3,23 @@ import styles from "./styles.js";
 import {View, StyleSheet, Button, TouchableWithoutFeedback, Text} from 'react-native';
 import { Video, AVPlaybackStatus } from 'expo-av';
 import {useState} from "react";
+import {
+    SafeAreaView,
+    SafeAreaProvider,
+    SafeAreaInsetsContext,
+    useSafeAreaInsets,
+    initialWindowMetrics,
+} from 'react-native-safe-area-context';
+
+
+
+
 
 const Post = () => {
     const video = React.useRef(null);
     const [paused, setPaused] = useState(true);
+
+
 
     const onPlayPausePress = () => {
         setPaused(!paused);
@@ -29,7 +42,7 @@ const Post = () => {
             </TouchableWithoutFeedback>
 
             <View style={styles.uiContainer}>
-                <Text>I am the bottom component</Text>
+                <Text style={{color: "#fff"}}>I am the bottom component</Text>
             </View>
 
         </View>

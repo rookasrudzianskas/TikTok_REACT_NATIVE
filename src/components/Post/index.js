@@ -39,14 +39,15 @@ const Post = () => {
                 </View>
                 <View style={styles.bottomContainer}>
                     <Text style={styles.handle}>@rookas 🛑</Text>
-                    <Text style={{color: "#fff", fontSize: 20}}>🎵 Alive by Kygo</Text>
+                    <Text style={{color: "#fff", fontSize: 20}}>Dancing together in the gym spot</Text>
                 </View>
 
                 <View style={styles.bottomContainer}>
                 </View>
 
                 <View style={styles.icons}>
-                    <FontAwesome5 name="music" size={24} color="black" />
+                    <FontAwesome5 name="music" size={24} color="white" />
+                    <Text>Alive by Kygo</Text>
 
                 </View>
 

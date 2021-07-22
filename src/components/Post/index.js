@@ -2,13 +2,14 @@ import * as React from 'react';
 import styles from "./styles.js";
 import {View, StyleSheet, Button, TouchableWithoutFeedback} from 'react-native';
 import { Video, AVPlaybackStatus } from 'expo-av';
+import {useState} from "react";
 
 const Post = () => {
     const video = React.useRef(null);
+    const [paused, setPaused] = useState(false);
 
     const onPlayPausePress = () => {
-        console.log("WORKING");
-
+        setPaused(!paused);
     }
     return (
         <View style={styles.container}>

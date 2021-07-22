@@ -11,6 +11,7 @@ const Post = () => {
                 ref={video}
                 style={styles.video}
                 shouldPlay
+                resizeMode="cover"
                 source={{
                     uri: 'https://d8vywknz0hvjw.cloudfront.net/fitenium-media-prod/videos/45fee890-a74f-11ea-8725-311975ea9616/proccessed_720.mp4',
                 }}

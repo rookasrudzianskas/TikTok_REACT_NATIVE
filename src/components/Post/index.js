@@ -12,7 +12,7 @@ const Post = () => {
     }
     return (
         <View style={styles.container}>
-            <TouchableWithoutFeedback onPress={() => onPlayPausePress}>
+            <TouchableWithoutFeedback onPress={onPlayPausePress}>
                 <Video
                     ref={video}
                     style={styles.video}

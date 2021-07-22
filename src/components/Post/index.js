@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from "./styles.js";
-import {View, StyleSheet, Button, TouchableWithoutFeedback} from 'react-native';
+import {View, StyleSheet, Button, TouchableWithoutFeedback, Text} from 'react-native';
 import { Video, AVPlaybackStatus } from 'expo-av';
 import {useState} from "react";
 
@@ -27,6 +27,10 @@ const Post = () => {
                 />
 
             </TouchableWithoutFeedback>
+
+            <View style={styles.uiContainer}>
+                <Text>I am the bottom component</Text>
+            </View>
 
         </View>
     );

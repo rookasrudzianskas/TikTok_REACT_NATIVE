@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     uiContainer: {
         height: '100%',
         justifyContent: 'flex-end',
-        zIndex: 2,
+        zIndex: 1,
     },
     rightContainer: {
         alignSelf: 'flex-end',

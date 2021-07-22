@@ -6,7 +6,7 @@ import {useState} from "react";
 
 const Post = () => {
     const video = React.useRef(null);
-    const [paused, setPaused] = useState(false);
+    const [paused, setPaused] = useState(true);
 
     const onPlayPausePress = () => {
         setPaused(!paused);
@@ -17,7 +17,7 @@ const Post = () => {
                 <Video
                     ref={video}
                     style={styles.video}
-                    shouldPlay
+                    shouldPlay={paused}
                     resizeMode="cover"
                     onError={(e) => console.log(e)}
                     source={{

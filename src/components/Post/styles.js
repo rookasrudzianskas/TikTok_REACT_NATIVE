@@ -11,11 +11,12 @@ const styles = StyleSheet.create({
         left: 0,
         bottom: 0,
         right: 0,
+        zIndex: 1,
     },
     uiContainer: {
         height: '100%',
         justifyContent: 'flex-end',
-        zIndex: 1
+        zIndex: 2,
     }
 });
 

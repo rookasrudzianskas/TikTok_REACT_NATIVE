@@ -5,6 +5,10 @@ import { Video, AVPlaybackStatus } from 'expo-av';
 import {useState} from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { Entypo } from '@expo/vector-icons';
+import AntDesign from "react-native-vector-icons/AntDesign";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Fontisto from "react-native-vector-icons/Fontisto";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 // working fine
 
@@ -39,17 +43,18 @@ const Post = () => {
                         <Image style={styles.profilePictureContainer} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}}/>
 
                         <View style={styles.iconContainer}>
-                            <Entypo name="beamed-note" size={40} color="white" />
+                            <AntDesign name="heart" size={40} color="white" />
+                            {/*// <AntDesign name="hearto" size={24} color="black" />*/}
                             <Text style={styles.statsLabel}>123</Text>
                         </View>
 
                         <View style={styles.iconContainer}>
-                            <Entypo name="beamed-note" size={40} color="white" />
+                            <FontAwesome name="commenting" size={40} color="white" />
                             <Text style={styles.statsLabel}>123</Text>
                         </View>
 
                         <View style={styles.iconContainer}>
-                            <Entypo name="beamed-note" size={40} color="white" />
+                            <MaterialCommunityIcons name="share-all" size={40} color="white" />
                             <Text style={styles.statsLabel}>123</Text>
                         </View>
                 </View>

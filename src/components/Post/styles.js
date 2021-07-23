@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
         height: 300,
         justifyContent: "space-between",
         alignItems: 'center',
+        marginRight: 5,
     },
     bottomContainer: {
         padding: 10,
@@ -58,12 +59,14 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: "white",
     },
-    iconsContainer: {
+    iconContainer: {
+        alignItems: 'center',
     },
     statsLabel: {
         color: "#fff",
         fontSize: 16,
         fontWeight: '600',
+        marginTop: 5,
     }
 });
 

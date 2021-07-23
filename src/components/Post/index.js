@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from "./styles.js";
-import {View, StyleSheet, Image, Button, TouchableWithoutFeedback, Text} from 'react-native';
+import {View, StyleSheet, Image, Button, TouchableWithoutFeedback, Text, TouchableOpacity} from 'react-native';
 import { Video, AVPlaybackStatus } from 'expo-av';
 import {useState} from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
@@ -22,6 +22,14 @@ const Post = (props) => {
     const onPlayPausePress = () => {
         setPaused(!paused);
     }
+
+    const onLikePress = () => {
+        setPost({
+            ...post,
+            likes: post.likes + 1,
+        })
+    }
+
     return (
         <View style={styles.container}>
             <TouchableWithoutFeedback onPress={onPlayPausePress}>
@@ -43,11 +51,13 @@ const Post = (props) => {
                 <View style={styles.rightContainer}>
                         <Image style={styles.profilePictureContainer} source={{uri: post.user.imageUri}}/>
 
+                    <TouchableOpacity activeOpacity={0.8} onPress={onLikePress}>
                         <View style={styles.iconContainer}>
                             <AntDesign name="heart" size={40} color="white" />
                             {/*// <AntDesign name="hearto" size={24} color="black" />*/}
                             <Text style={styles.statsLabel}>{post.likes}</Text>
                         </View>
+                    </TouchableOpacity>
 
                         <View style={styles.iconContainer}>
                             <FontAwesome name="commenting" size={40} color="white" />

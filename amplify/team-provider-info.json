@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tiktokapp-dev-143319-authRole",
+      "UnauthRoleArn": "arn:aws:iam::986698840618:role/amplify-tiktokapp-dev-143319-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::986698840618:role/amplify-tiktokapp-dev-143319-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tiktokapp-dev-143319-deployment",
+      "UnauthRoleName": "amplify-tiktokapp-dev-143319-unauthRole",
+      "StackName": "amplify-tiktokapp-dev-143319",
+      "StackId": "arn:aws:cloudformation:us-east-1:986698840618:stack/amplify-tiktokapp-dev-143319/c97a06b0-eba9-11eb-bb66-0e9b76727ea5",
+      "AmplifyAppId": "d1l64dhppssp9o"
+    },
+    "categories": {
+      "auth": {
+        "tiktokappfbd72f89": {}
+      }
+    }
+  }
+}

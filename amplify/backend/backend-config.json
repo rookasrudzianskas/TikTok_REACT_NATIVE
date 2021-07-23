@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "tiktokappfbd72f89": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

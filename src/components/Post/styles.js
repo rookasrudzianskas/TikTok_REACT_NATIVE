@@ -20,6 +20,9 @@ const styles = StyleSheet.create({
     },
     rightContainer: {
         alignSelf: 'flex-end',
+        height: 300,
+        justifyContent: "space-between",
+        alignItems: 'center',
     },
     bottomContainer: {
         padding: 10,
@@ -52,7 +55,16 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 25,
+        borderWidth: 2,
+        borderColor: "white",
     },
+    iconsContainer: {
+    },
+    statsLabel: {
+        color: "#fff",
+        fontSize: 16,
+        fontWeight: '600',
+    }
 });
 
 export default styles;

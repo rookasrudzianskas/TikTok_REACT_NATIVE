@@ -11,5 +11,13 @@ type Post @model @key(name: "byUser", fields: ["userID"]) {
   description: String!
   userID: ID!
   user: User @connection(fields: ["userID"])
+
+  songID: ID!
+  song: Song @connection(fields: ["songID"])
 }
 
+type Song @model {
+  id: ID!
+  name: String!
+  imageUri: String
+}

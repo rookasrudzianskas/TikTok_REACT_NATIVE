@@ -31,8 +31,9 @@ const styles = StyleSheet.create({
     flip: {
         width: 50,
         height: 50,
-        backgroundColor: "orange",
+        backgroundColor: "white",
         marginRight: 20,
+        borderRadius: 3
     },
     row: {
         flexDirection: "row",

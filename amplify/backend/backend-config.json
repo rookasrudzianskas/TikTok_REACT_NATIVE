@@ -24,5 +24,11 @@
         }
       }
     }
+  },
+  "storage": {
+    "tiktokapp": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }

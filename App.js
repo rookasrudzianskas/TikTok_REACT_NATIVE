@@ -9,6 +9,7 @@ import config from './aws-exports';
 import { withAuthenticator } from 'aws-amplify-react-native'
 import {Auth, API, graphqlOperation} from "aws-amplify";
 import {getUser} from "./src/graphql/queries";
+import {createUser} from "./src/graphql/mutations";
 
 Amplify.configure(config);
 
@@ -51,13 +52,12 @@ function App() {
         imageUri: getRandomImage(),
       }
 
-      console.log("NEW USER >>>>", newUser);
-
 
       // get currently authenticated user
 
       // check if the user exists in the database, if it does not, meaning it is newly registered user, then please create a new user in the database
 
+      await API.graphql(graphqlOperation(createUser, {input: newUser}));
     }
 
     fetchUser();

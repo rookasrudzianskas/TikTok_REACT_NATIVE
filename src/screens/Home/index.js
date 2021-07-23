@@ -9,11 +9,11 @@ const post = {
     user: {
         id: 'u1',
         username: 'rookas',
-        imageUri: 'https://influencermarketinghub.com/wiki/wp-content/uploads/2020/08/1657369265111046_c5_720x720.jpeg',
+        imageUri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg',
     },
     description: 'hahahah oh boy @rookas',
     songName: 'NF - The search',
-    songImage: 'https://influencermarketinghub.com/wiki/wp-content/uploads/2020/08/1657369265111046_c5_720x720.jpeg',
+    songImage: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg',
     likes: 123,
     comments: 12,
     shares: 44,

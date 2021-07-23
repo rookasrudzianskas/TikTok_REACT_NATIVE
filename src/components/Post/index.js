@@ -33,7 +33,7 @@ const Post = ({post}) => {
                     resizeMode="cover"
                     onError={(e) => console.log(e)}
                     source={{
-                        uri: 'https://d8vywknz0hvjw.cloudfront.net/fitenium-media-prod/videos/45fee890-a74f-11ea-8725-311975ea9616/proccessed_720.mp4',
+                        uri: post.videoUri,
                     }}
                     isLooping
                 />
@@ -41,7 +41,7 @@ const Post = ({post}) => {
 
             <View style={styles.uiContainer}>
                 <View style={styles.rightContainer}>
-                        <Image style={styles.profilePictureContainer} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}}/>
+                        <Image style={styles.profilePictureContainer} source={{uri: post.user.imageUri}}/>
 
                         <View style={styles.iconContainer}>
                             <AntDesign name="heart" size={40} color="white" />
@@ -62,18 +62,18 @@ const Post = ({post}) => {
 
                 <View style={styles.bottomContainer}>
                     <View>
-                        <Text style={styles.handle}>@rookas 🛑</Text>
-                        <Text style={styles.description}>Dancing together in the gym spot</Text>
+                        <Text style={styles.handle}>@{post.user.username} 🛑</Text>
+                        <Text style={styles.description}>{post.description}</Text>
 
                         <View style={styles.songRow}>
                             <FontAwesome5 name="music" size={24} color="white" />
-                            <Text style={styles.songName}>Alive by Kygo</Text>
+                            <Text style={styles.songName}>{post.songName}</Text>
                         </View>
 
                     </View>
 
                     <View>
-                       <Image style={styles.songImage} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}}/>
+                       <Image style={styles.songImage} source={{uri: post.songImage}}/>
                     </View>
 
                          </View>

@@ -2,12 +2,14 @@ import { Camera } from 'expo-camera';
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from "react-native";
 import {Storage} from "aws-amplify";
+import {useRoute} from "@react-navigation/native";
 
 import styles from "./styles";
 
 const CreatePost = () => {
 
     const [description, setDescription] = useState("");
+    const route = useRoute();
 
     const uploadToStorage = async(imagePath) => {
         try {
@@ -24,6 +26,10 @@ const CreatePost = () => {
             console.log(e);
         }
     }
+
+    useEffect(() => {
+
+    }, []);
 
     const onPublish = () => {
 

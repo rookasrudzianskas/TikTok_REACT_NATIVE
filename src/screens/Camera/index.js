@@ -1,5 +1,5 @@
 import { Camera } from 'expo-camera';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, TouchableOpacity} from "react-native";
 import styles from "./styles";
 
@@ -9,6 +9,7 @@ const Cameras = () => {
     const [hasPermission, setHasPermission] = useState(null);
     const [isRecording, setIsRecording] = useState(false);
     const [type, setType] = useState(Camera.Constants.Type.back);
+    const camera = useRef();
 
 
     useEffect(() => {
@@ -25,14 +26,18 @@ const Cameras = () => {
         return <Text>No access to camera</Text>;
     }
 
-    const onRecord = () => {
-
+    const onRecord = async () => {
+        if (isRecording) {
+            camera.current.stopRecording();
+        } else {
+            const data = await camera.current.recordAsync();
+        }
     }
 
     return (
 
         <View style={styles.container}>
-          <Camera style={styles.preview} type={type} />
+          <Camera style={styles.preview} ref={camera} type={type} />
             <TouchableOpacity onPress={onRecord} activeOpacity={0.8} style={isRecording ? styles.buttonStop : styles.buttonRecord}>
 
             </TouchableOpacity>

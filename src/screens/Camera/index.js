@@ -7,6 +7,7 @@ const Cameras = () => {
 
 
     const [hasPermission, setHasPermission] = useState(null);
+    const [isRecording, setIsRecording] = useState(false);
     const [type, setType] = useState(Camera.Constants.Type.back);
 
 

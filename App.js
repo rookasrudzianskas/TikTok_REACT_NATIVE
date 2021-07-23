@@ -25,7 +25,7 @@ function App() {
   ]
 
   const getRandomImage = () => {
-
+    return randomImages[Math.floor(Math.random() * randomImages.length)];
   }
 
   useEffect(() => {

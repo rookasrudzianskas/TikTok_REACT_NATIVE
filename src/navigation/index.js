@@ -15,7 +15,7 @@ const RootNavigation = () => {
                 headerShown: false,
             }}>
                 <Stack.Screen name="Home" component={HomeBottomTabNavigator} />
-                <Stack.Screen options={{headerShown: true}} name="Post" component={CreatePost} />
+                <Stack.Screen options={{headerShown: true}} name="CreatePost" component={CreatePost} />
             </Stack.Navigator>
         </NavigationContainer>
     )

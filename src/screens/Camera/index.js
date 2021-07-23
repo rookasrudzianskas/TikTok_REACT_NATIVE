@@ -36,7 +36,7 @@ const Cameras = () => {
         } else {
             setIsRecording(true);
             const data = await camera.current.recordAsync();
-            navigation.navigate("Post", {videoUri: data.uri});
+            navigation.navigate("CreatePost", {videoUri: data.uri});
 
         }
     }

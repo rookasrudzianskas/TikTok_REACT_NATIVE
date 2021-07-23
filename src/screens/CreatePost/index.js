@@ -17,8 +17,10 @@ const CreatePost = () => {
     const navigation = useNavigation();
 
     const uploadToStorage = async (imagePath) => {
+
         try {
             const response = await fetch(imagePath);
+            console.log("DONE");
 
             const blob = await response.blob();
 

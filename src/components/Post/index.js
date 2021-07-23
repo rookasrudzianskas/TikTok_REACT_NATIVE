@@ -12,7 +12,8 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 // working fine
 
-const Post = (props) => {
+const Post = ({post}) => {
+    console.log(post);
     const video = React.useRef(null);
     const [paused, setPaused] = useState(true);
 

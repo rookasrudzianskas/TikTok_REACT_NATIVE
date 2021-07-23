@@ -27,14 +27,14 @@ const styles = StyleSheet.create({
     handle: {
         color: "#fff",
         fontSize: 16,
-        fontWeight: "600",
-        marginBottom: 5,
+        fontWeight: "700",
+        marginBottom: 10,
     },
     description: {
         color: "#fff",
         fontSize: 16,
         fontWeight: '300',
-        marginBottom: 5,
+        marginBottom: 10,
     },
     songRow: {
         flexDirection: "row",

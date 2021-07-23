@@ -1,9 +1,10 @@
 import * as React from 'react';
 import styles from "./styles.js";
-import {View, StyleSheet, Button, TouchableWithoutFeedback, Text} from 'react-native';
+import {View, StyleSheet, Image, Button, TouchableWithoutFeedback, Text} from 'react-native';
 import { Video, AVPlaybackStatus } from 'expo-av';
 import {useState} from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import { Entypo } from '@expo/vector-icons';
 
 // working fine
 
@@ -35,8 +36,25 @@ const Post = () => {
 
             <View style={styles.uiContainer}>
                 <View style={styles.rightContainer}>
-                    <Text style={{color: "#fff", fontSize: 20}}>Side</Text>
+                    <View style={styles.profilePictureContainer}>
+                        <Image sourse={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}}/>
+                    </View>
+                        <View style={styles.iconContainer}>
+                            <Entypo name="beamed-note" size={40} color="white" />
+                            <Text>123</Text>
+                        </View>
+
+                        <View style={styles.iconContainer}>
+                            <Entypo name="beamed-note" size={40} color="white" />
+                            <Text style={styles.statsLabel}>123</Text>
+                        </View>
+
+                        <View style={styles.iconContainer}>
+                            <Entypo name="beamed-note" size={40} color="white" />
+                            <Text>123</Text>
+                        </View>
                 </View>
+
                 <View style={styles.bottomContainer}>
                     <Text style={styles.handle}>@rookas 🛑</Text>
                     <Text style={styles.description}>Dancing together in the gym spot</Text>

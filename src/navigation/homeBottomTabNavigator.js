@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text} from "react-native";
+import {View, Text, Image} from "react-native";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
 import Entypo from "react-native-vector-icons/Entypo";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import PlusIcon from "../../assets/images/plus-icon.png";
 
 const Tab = createBottomTabNavigator();
 
@@ -32,11 +33,11 @@ const HomeBottomTabNavigator = () => {
                 }}
                 component={Home} />
             <Tab.Screen
-                name={"Upload"}
+                name={"Rokas"}
                 options={{
-                    tabBarIcon: ({color}) => (
-                        <Entypo name="home" size={24} color={color} />
-                    )
+                   tabBarIcon: ({color}) => (
+                       <Image source={PlusIcon} style={{height: 30, resizeMode: 'contain'}} />
+                   )
                 }}
                 component={Home} />
             <Tab.Screen
@@ -47,13 +48,6 @@ const HomeBottomTabNavigator = () => {
                 }}
                 component={Home} />
 
-            <Tab.Screen
-                name={"Inbox"}
-                options={{
-                    tabBarIcon: ({color}) => (
-                        <MaterialIcons name="inbox" size={24} color={color} />                    )
-                }}
-                component={Home} />
 
             <Tab.Screen
                 name={"Profile"}

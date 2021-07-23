@@ -49,7 +49,9 @@ const styles = StyleSheet.create({
     },
     // right container goes in here
     profilePictureContainer: {
-
+        width: 50,
+        height: 50,
+        borderRadius: 25,
     },
 });
 

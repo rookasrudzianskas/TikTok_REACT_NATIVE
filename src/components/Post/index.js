@@ -36,8 +36,8 @@ const Post = () => {
 
             <View style={styles.uiContainer}>
                 <View style={styles.rightContainer}>
-                    <View style={styles.profilePictureContainer}>
-                        <Image sourse={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}}/>
+                    <View>
+                        <Image style={styles.profilePictureContainer} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}}/>
                     </View>
                         <View style={styles.iconContainer}>
                             <Entypo name="beamed-note" size={40} color="white" />

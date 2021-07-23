@@ -11,12 +11,18 @@ const styles = StyleSheet.create({
         left: 0,
         bottom: 0,
         right: 0,
-        zIndex: 1,
+    },
+    videoPlayButton: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+        zIndex: 100,
     },
     uiContainer: {
         height: '100%',
         justifyContent: 'flex-end',
-        zIndex: 1,
     },
     rightContainer: {
         alignSelf: 'flex-end',

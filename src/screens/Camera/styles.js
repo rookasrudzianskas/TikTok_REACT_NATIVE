@@ -23,10 +23,10 @@ const styles = StyleSheet.create({
     buttonStop: {
         alignSelf: 'center',
         marginVertical: 10,
-        width: 50,
-        height: 50,
+        width: 35,
+        height: 35,
         backgroundColor: "#ff4343",
-        borderRadius: 25,
+        borderRadius: 3,
     }
 
 })

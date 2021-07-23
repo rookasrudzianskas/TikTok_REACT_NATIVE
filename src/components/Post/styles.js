@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
     },
     bottomContainer: {
         padding: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     handle: {
         color: "#fff",
@@ -50,6 +52,13 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 16,
         marginLeft: 5,
+    },
+    songImage: {
+      width: 50,
+      height: 50,
+      borderRadius: 25,
+      borderWidth: 2,
+      borderColor: "#fff",
     },
     // right container goes in here
     profilePictureContainer: {

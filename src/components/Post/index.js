@@ -60,17 +60,24 @@ const Post = () => {
                 </View>
 
                 <View style={styles.bottomContainer}>
-                    <Text style={styles.handle}>@rookas 🛑</Text>
-                    <Text style={styles.description}>Dancing together in the gym spot</Text>
+                    <View>
+                        <Text style={styles.handle}>@rookas 🛑</Text>
+                        <Text style={styles.description}>Dancing together in the gym spot</Text>
+
+                        <View style={styles.songRow}>
+                            <FontAwesome5 name="music" size={24} color="white" />
+                            <Text style={styles.songName}>Alive by Kygo</Text>
+                        </View>
+
+                    </View>
+
+                    <View>
+                       <Image style={styles.songImage} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}}/>
+                    </View>
+
                 </View>
-
-                <View style={styles.songRow}>
-                    <FontAwesome5 name="music" size={24} color="white" />
-                    <Text style={styles.songName}>Alive by Kygo</Text>
-
-                </View>
-
             </View>
+
 
         </View>
     );

@@ -56,7 +56,7 @@ const Post = (props) => {
 
                     <TouchableOpacity activeOpacity={0.8} onPress={onLikePress}>
                         <View style={styles.iconContainer}>
-                            <AntDesign name="heart" size={40} color="white" />
+                            <AntDesign name={isLiked ? 'heart': 'hearto'} size={40} color={isLiked ? 'red' : 'white'} />
                             {/*// <AntDesign name="hearto" size={24} color="black" />*/}
                             <Text style={styles.statsLabel}>{post.likes}</Text>
                         </View>

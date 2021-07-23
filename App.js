@@ -20,6 +20,8 @@ function App() {
       <StatusBar style="light" />
         <RootNavigation />
     </SafeAreaView>
+
+
   );
 }
 

@@ -8,6 +8,7 @@ import Amplify from 'aws-amplify';
 import config from './aws-exports';
 import { withAuthenticator } from 'aws-amplify-react-native'
 import {Auth, API, graphqlOperation} from "aws-amplify";
+import {getUser} from "./src/graphql/queries";
 
 Amplify.configure(config);
 
@@ -22,6 +23,7 @@ function App() {
         return;
       }
 
+      const getUser = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}))
 
 
       // get currently authenticated user

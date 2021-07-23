@@ -11,12 +11,12 @@ const Stack = createStackNavigator();
 const RootNavigation = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName={"Post"} screenOptions={{
+            <Stack.Navigators screenOptions={{
                 headerShown: false,
             }}>
                 <Stack.Screen name="Home" component={HomeBottomTabNavigator} />
                 <Stack.Screen options={{headerShown: true}} name="Post" component={CreatePost} />
-            </Stack.Navigator>
+            </Stack.Navigators>
         </NavigationContainer>
     )
 };

@@ -11,7 +11,6 @@ const Home = () => {
         <View>
             <FlatList showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} data={posts} renderItem={({item}) => <Post post={item} />} snapToInterval={Dimensions.get('window').height -124} snapToAlignment={"start"} decelerationRate={"fast"}/>
         </View>
-        </View>
     )
 }
 

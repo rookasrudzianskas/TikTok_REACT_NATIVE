@@ -15,6 +15,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 const Post = (props) => {
     const video = React.useRef(null);
     const [paused, setPaused] = useState(true);
+    const [isLiked, setIsLiked] = useState(false);
 
     const [post, setPost] = useState(props.post);
 
@@ -24,10 +25,12 @@ const Post = (props) => {
     }
 
     const onLikePress = () => {
+        const likesToAdd = isLiked ? -1 : 1
         setPost({
             ...post,
-            likes: post.likes + 1,
-        })
+            likes: post.likes + likesToAdd,
+        });
+        setIsLiked(!isLiked);
     }
 
     return (

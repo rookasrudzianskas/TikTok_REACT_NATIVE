@@ -21,15 +21,30 @@ const styles = StyleSheet.create({
     rightContainer: {
         alignSelf: 'flex-end',
     },
+    bottomContainer: {
+        padding: 10,
+    },
     handle: {
         color: "#fff",
         fontSize: 16,
         fontWeight: "600",
+        marginBottom: 5,
     },
     description: {
         color: "#fff",
         fontSize: 16,
         fontWeight: '300',
+        marginBottom: 5,
+    },
+    songRow: {
+        flexDirection: "row",
+        paddingBottom: 20,
+        paddingHorizontal: 20,
+    },
+    songName: {
+        color: "#fff",
+        fontSize: 16,
+        marginLeft: 5,
     }
 });
 

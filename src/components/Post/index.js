@@ -5,7 +5,7 @@ import { Video, AVPlaybackStatus } from 'expo-av';
 import {useState} from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
-
+// working fine
 
 const Post = () => {
     const video = React.useRef(null);

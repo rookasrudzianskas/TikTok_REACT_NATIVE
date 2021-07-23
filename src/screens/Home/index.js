@@ -8,7 +8,7 @@ import posts from "../../data/posts";
 const Home = () => {
     return (
         <View>
-            <FlatList data={posts}  />
+            <FlatList data={posts} renderItem={({item}) => <Post post={item} />}/>
         </View>
     )
 }

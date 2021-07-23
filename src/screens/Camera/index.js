@@ -1,7 +1,7 @@
 import { Camera } from 'expo-camera';
 import React, {useEffect, useState} from 'react';
 import {View, Text} from "react-native";
-import "./styles";
+import styles from "./styles";
 
 const Cameras = () => {
 

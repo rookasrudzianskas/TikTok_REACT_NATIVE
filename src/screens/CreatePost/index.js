@@ -1,12 +1,13 @@
 import { Camera } from 'expo-camera';
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from "react-native";
-import {Storage} from "aws-amplify";
+import {API, graphqlOperation, Storage} from "aws-amplify";
 import {useRoute} from "@react-navigation/native";
 import { v4 as uuidv4 } from 'uuid';
 
 
 import styles from "./styles";
+import {createPost} from "../../graphql/mutations";
 
 const CreatePost = () => {
 
@@ -34,12 +35,15 @@ const CreatePost = () => {
         uploadToStorage(route.params.videoUri);
     }, []);
 
-    const onPublish = () => {
+    const onPublish = async () => {
 
         // upload video to the cloud
+        const newPost = {
+
+        }
 
         try {
-
+            const response = await API.graphql(graphqlOperation(createPost, {input: newPost}));
         } catch (e) {
             console.log(e);
         }

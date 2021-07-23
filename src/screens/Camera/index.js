@@ -33,7 +33,7 @@ const Cameras = () => {
 
         <View style={styles.container}>
           <Camera style={styles.preview} type={type} />
-            <TouchableOpacity onPress={onRecord} activeOpacity={0.8} style={isRecording ? styles.buttonRecord : styles.buttonStop}>
+            <TouchableOpacity onPress={onRecord} activeOpacity={0.8} style={isRecording ? styles.buttonStop : styles.buttonRecord}>
 
             </TouchableOpacity>
 

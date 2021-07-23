@@ -32,13 +32,14 @@ function App() {
     const fetchUser = async() => {
       const userInfo = await Auth.currentAuthenticatedUser({bypassCache: true});
 
+
       if(!userInfo) {
         return;
       }
 
-      const getUser = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
+      const getUserResponse = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
 
-      if(getUser.data.getUser) {
+      if(getUserResponse.data.getUser) {
         console.log("User already exists in the database 🚀");
         return;
       }
@@ -49,6 +50,8 @@ function App() {
         email: userInfo.attributes.email,
         imageUri: getRandomImage(),
       }
+
+      console.log("NEW USER >>>>", newUser);
 
 
       // get currently authenticated user

@@ -1,6 +1,6 @@
 import { Camera } from 'expo-camera';
 import React, {useEffect, useState} from 'react';
-import {View, Text} from "react-native";
+import {View, Text, TouchableOpacity} from "react-native";
 import styles from "./styles";
 
 const Cameras = () => {
@@ -24,11 +24,18 @@ const Cameras = () => {
         return <Text>No access to camera</Text>;
     }
 
+    const onRecord = () => {
+
+    }
+
     return (
 
         <View style={styles.container}>
-          <Camera style={styles.preview} type={type}>
-          </Camera>
+          <Camera style={styles.preview} type={type} />
+            <TouchableOpacity onPress={onRecord} activeOpacity={0.8} style={styles.button}>
+
+            </TouchableOpacity>
+
         </View>
     );
 };

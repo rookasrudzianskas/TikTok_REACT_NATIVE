@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         width: 50,
         height: 50,
-        backgroundColor: "white",
+        backgroundColor: "#ff4343",
         borderRadius: 25,
     }
 

@@ -2,15 +2,22 @@ import React, {useEffect} from 'react';
 import {View, Text, FlatList, Dimensions} from 'react-native';
 import Post from "../../components/Post";
 import posts from "../../data/posts";
+import {API, graphqlOperation} from "aws-amplify";
+import {listPosts} from "../../graphql/queries";
 
 
 
 const Home = () => {
 
     useEffect(() => {
-        const fetchPost = () => {
-            // fetch all the posts
-
+        const fetchPost = async () => {
+            // fetc h all the posts
+            try {
+                const response = await API.graphql(graphqlOperation(listPosts));
+                console.log(response);
+            } catch (e) {
+                console.log(e);
+            }
         }
 
         fetchPost();

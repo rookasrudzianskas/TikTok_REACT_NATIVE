@@ -9,6 +9,9 @@ const CreatePost = () => {
 
     const onPublish = () => {
 
+        // upload video to the cloud
+
+        // create post in the database
     }
 
     return (

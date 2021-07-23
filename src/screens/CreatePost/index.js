@@ -7,9 +7,19 @@ const CreatePost = () => {
 
     const [description, setDescription] = useState("");
 
+    const uploadToStorage = async(imagePath) => {
+        try {
+
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     const onPublish = () => {
 
         // upload video to the cloud
+
+
 
         // create post in the database
     }

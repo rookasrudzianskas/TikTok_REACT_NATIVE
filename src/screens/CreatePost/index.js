@@ -11,6 +11,7 @@ import styles from "./styles";
 const CreatePost = () => {
 
     const [description, setDescription] = useState("");
+    const [videoKey, setVideoKey] = useState(null);
     const route = useRoute();
 
     const uploadToStorage = async(imagePath) => {
@@ -22,7 +23,7 @@ const CreatePost = () => {
             const filename = `${uuidv4()}.mp4`;
             const s3Response = await Storage.put(filename, blob);
 
-            console.log(s3Response);
+            setVideoKey(s3Response.key);
 
         } catch (e) {
             console.log(e);
@@ -37,7 +38,11 @@ const CreatePost = () => {
 
         // upload video to the cloud
 
+        try {
 
+        } catch (e) {
+            console.log(e);
+        }
 
         // create post in the database
     }

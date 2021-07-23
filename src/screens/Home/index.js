@@ -16,7 +16,6 @@ const Home = () => {
             try {
                 const response = await API.graphql(graphqlOperation(listPosts));
                 setPosts(response.data.listPosts.items);
-                console.log(response);
             } catch (e) {
                 console.log(e);
             }

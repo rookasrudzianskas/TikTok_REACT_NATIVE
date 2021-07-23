@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import Home from "./src/screens/Home";
 import "react-native-gesture-handler";
@@ -10,12 +10,13 @@ import { withAuthenticator } from 'aws-amplify-react-native'
 import {Auth, API, graphqlOperation} from "aws-amplify";
 import {getUser} from "./src/graphql/queries";
 import {createUser} from "./src/graphql/mutations";
+import { Camera } from 'expo-camera';
+
 
 Amplify.configure(config);
 
 
 function App() {
-
   const randomImages = [
       "https://i.pinimg.com/280x280_RS/b3/e9/8a/b3e98a26c0aa5f92254b0a3c7aeaf022.jpg",
       "https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg",
@@ -28,6 +29,19 @@ function App() {
   const getRandomImage = () => {
     return randomImages[Math.floor(Math.random() * randomImages.length)];
   }
+
+  const [hasPermission, setHasPermission] = useState(null);
+  const [type, setType] = useState(Camera.Constants.Type.back);
+
+  useEffect(() => {
+    (async () => {
+      const { status } = await Camera.requestPermissionsAsync();
+      setHasPermission(status === 'granted');
+    })();
+  }, []);
+
+
+
 
   useEffect(() => {
     const fetchUser = async() => {

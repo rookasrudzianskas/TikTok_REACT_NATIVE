@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
         padding: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'flex-end',
     },
     handle: {
         color: "#fff",
@@ -57,8 +58,8 @@ const styles = StyleSheet.create({
       width: 50,
       height: 50,
       borderRadius: 25,
-      borderWidth: 2,
-      borderColor: "#fff",
+      borderWidth: 5,
+      borderColor: "#4c4c4c",
     },
     // right container goes in here
     profilePictureContainer: {

@@ -33,7 +33,6 @@ const Cameras = () => {
         } else {
             setIsRecording(true);
             const data = await camera.current.recordAsync();
-            console.log(data);
         }
     }
 
@@ -42,7 +41,7 @@ const Cameras = () => {
         <View style={styles.container}>
           <Camera onRecordingStart={() => setIsRecording(true)} onRecordingEnd={() => setIsRecording(false)} style={styles.preview} ref={camera} type={type} />
             <View style={styles.row}>
-                <TouchableOpacity style={styles.flip}  onPress={() => {setType(type === Camera.Constants.Type.back ? Camera.Constants.Type.front : Camera.Constants.Type.back
+                <TouchableOpacity activeOpacity={0.8} style={styles.flip}  onPress={() => {setType(type === Camera.Constants.Type.back ? Camera.Constants.Type.front : Camera.Constants.Type.back
                     );
                 }}>
                     <Text style={{alignSelf: 'center', marginTop: 16, fontWeight: "700"}}>FLIP</Text>

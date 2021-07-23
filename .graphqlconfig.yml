@@ -1,0 +1,13 @@
+projects:
+  tiktokapp:
+    schemaPath: >-
+      Users/rookasrudzianskas/Documents/REACT_NATIVE/REACT_TIKTOK/tiktokapp/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql

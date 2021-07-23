@@ -15,6 +15,19 @@ Amplify.configure(config);
 
 function App() {
 
+  const randomImages = [
+      "https://i.pinimg.com/280x280_RS/b3/e9/8a/b3e98a26c0aa5f92254b0a3c7aeaf022.jpg",
+      "https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg",
+      "https://pbs.twimg.com/profile_images/1128580749534347264/CgS0Ulff_400x400.jpg",
+      "http://www.svietimonaujienos.lt/wp-content/uploads/2019/12/Rokas-e1575467263326.jpg",
+      "https://i.vimeocdn.com/portrait/25404543_640x640",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2sB4UoYa6JpQBsyq7ltuP8P4b3eJK5o4v9w&usqp=CAU",
+  ]
+
+  const getRandomImage = () => {
+
+  }
+
   useEffect(() => {
     const fetchUser = async() => {
       const userInfo = await Auth.currentAuthenticatedUser({bypassCache: true});
@@ -23,7 +36,19 @@ function App() {
         return;
       }
 
-      const getUser = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}))
+      const getUser = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
+
+      if(getUser.data.getUser) {
+        console.log("User already exists in the database 🚀");
+        return;
+      }
+
+      const newUser = {
+        id: userInfo.attributes.sub,
+        username: userInfo.username,
+        email: userInfo.attributes.email,
+        imageUri: getRandomImage(),
+      }
 
 
       // get currently authenticated user

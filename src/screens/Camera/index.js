@@ -27,7 +27,7 @@ const Cameras = () => {
     return (
 
         <View style={styles.container}>
-          <Camera style={styles.camera} type={type}>
+          <Camera style={styles.preview} type={type}>
           </Camera>
         </View>
     );

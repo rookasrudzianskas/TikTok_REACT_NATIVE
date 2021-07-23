@@ -3,25 +3,15 @@ import {StyleSheet} from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: "column",
+        backgroundColor: "#fff",
     },
-    camera: {
+    preview: {
         flex: 1,
-    },
-    buttonContainer: {
-        flex: 1,
-        backgroundColor: 'transparent',
-        flexDirection: 'row',
-        margin: 20,
-    },
-    button: {
-        flex: 0.1,
-        alignSelf: 'flex-end',
+        justifyContent: 'flex-end',
         alignItems: 'center',
     },
-    text: {
-        fontSize: 18,
-        color: 'white',
-    },
+
 })
 
 

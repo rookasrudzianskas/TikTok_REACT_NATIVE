@@ -1,6 +1,8 @@
 import { Camera } from 'expo-camera';
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from "react-native";
+import {Storage} from "aws-amplify";
+
 import styles from "./styles";
 
 const CreatePost = () => {
@@ -16,6 +18,7 @@ const CreatePost = () => {
             const filename = 'filename.pm4';
             const s3Response = await Storage.put(filename, blob);
 
+            console.log(s3Response);
 
         } catch (e) {
             console.log(e);

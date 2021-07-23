@@ -12,7 +12,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 // working fine
 
-const Post = () => {
+const Post = (props) => {
     const video = React.useRef(null);
     const [paused, setPaused] = useState(true);
 
@@ -24,6 +24,7 @@ const Post = () => {
     return (
         <View style={styles.container}>
             <TouchableWithoutFeedback onPress={onPlayPausePress}>
+                <View>
                 <Video
                     ref={video}
                     style={styles.video}
@@ -36,7 +37,6 @@ const Post = () => {
                     isLooping
                 />
 
-            </TouchableWithoutFeedback>
 
             <View style={styles.uiContainer}>
                 <View style={styles.rightContainer}>
@@ -75,9 +75,11 @@ const Post = () => {
                        <Image style={styles.songImage} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}}/>
                     </View>
 
+                         </View>
+                    </View>
                 </View>
-            </View>
 
+            </TouchableWithoutFeedback>
 
         </View>
     );

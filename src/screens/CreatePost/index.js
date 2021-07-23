@@ -2,7 +2,7 @@ import { Camera } from 'expo-camera';
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from "react-native";
 import {API, Auth, graphqlOperation, Storage} from "aws-amplify";
-import {useRoute} from "@react-navigation/native";
+import {useNavigation, useRoute} from "@react-navigation/native";
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -14,8 +14,9 @@ const CreatePost = () => {
     const [description, setDescription] = useState("");
     const [videoKey, setVideoKey] = useState(null);
     const route = useRoute();
+    const navigation = useNavigation();
 
-    const uploadToStorage = async(imagePath) => {
+    const uploadToStorage = async (imagePath) => {
         try {
             const response = await fetch(imagePath);
 
@@ -25,11 +26,10 @@ const CreatePost = () => {
             const s3Response = await Storage.put(filename, blob);
 
             setVideoKey(s3Response.key);
-
         } catch (e) {
-            console.log(e);
+            console.error(e);
         }
-    }
+    };
 
     useEffect(() => {
         uploadToStorage(route.params.videoUri);
@@ -57,6 +57,8 @@ const CreatePost = () => {
 
 
             const response = await API.graphql(graphqlOperation(createPost, {input: newPost}));
+            navigation.navigate("Home");
+
         } catch (e) {
             console.log(e);
         }

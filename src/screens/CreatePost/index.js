@@ -6,7 +6,7 @@ import styles from "./styles";
 const CreatePost = () => {
     return (
         <View style={styles.container}>
-
+            <Text>Hello from create</Text>
         </View>
     );
 };

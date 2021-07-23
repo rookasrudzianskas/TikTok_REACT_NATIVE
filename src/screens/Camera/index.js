@@ -2,6 +2,7 @@ import { Camera } from 'expo-camera';
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, TouchableOpacity} from "react-native";
 import styles from "./styles";
+import {useNavigation} from "@react-navigation/native";
 
 const Cameras = () => {
 
@@ -26,6 +27,8 @@ const Cameras = () => {
         return <Text>No access to camera</Text>;
     }
 
+    const navigation = useNavigation();
+
     const onRecord = async () => {
         if (isRecording) {
             camera.current.stopRecording();
@@ -33,6 +36,8 @@ const Cameras = () => {
         } else {
             setIsRecording(true);
             const data = await camera.current.recordAsync();
+            navigation.navigate("CreatePost", {videoUri: data.uri});
+
         }
     }
 

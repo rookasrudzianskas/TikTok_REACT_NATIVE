@@ -12,7 +12,15 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
     },
-    button: {
+    buttonRecord: {
+        alignSelf: 'center',
+        marginVertical: 10,
+        width: 50,
+        height: 50,
+        backgroundColor: "#ff4343",
+        borderRadius: 25,
+    },
+    buttonStop: {
         alignSelf: 'center',
         marginVertical: 10,
         width: 50,

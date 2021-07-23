@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Home from "./src/screens/Home";
 import "react-native-gesture-handler";
 import RootNavigation from "./src/navigation";
@@ -41,73 +41,60 @@ function App() {
   }, []);
 
 
-    if (hasPermission === null) {
-        return <View />;
-    }
-    if (hasPermission === false) {
-        return <Text>No access to camera</Text>;
+    // if (hasPermission === null) {
+    //     return <View />;
+    // }
+    // if (hasPermission === false) {
+    //     return <Text>No access to camera</Text>;
+    // }
+
+
+  useEffect(() => {
+    const fetchUser = async() => {
+      const userInfo = await Auth.currentAuthenticatedUser({bypassCache: true});
+
+
+      if(!userInfo) {
+        return;
+      }
+
+      const getUserResponse = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
+
+      if(getUserResponse.data.getUser) {
+        console.log("User already exists in the database 🚀");
+        return;
+      }
+
+      const newUser = {
+        id: userInfo.attributes.sub,
+        username: userInfo.username,
+        email: userInfo.attributes.email,
+        imageUri: getRandomImage(),
+
+      }
+
+
+      // get currently authenticated user
+
+      // check if the user exists in the database, if it does not, meaning it is newly registered user, then please create a new user in the database
+
+      await API.graphql(graphqlOperation(createUser, {input: newUser}));
     }
 
-  //
-  // useEffect(() => {
-  //   const fetchUser = async() => {
-  //     const userInfo = await Auth.currentAuthenticatedUser({bypassCache: true});
-  //
-  //
-  //     if(!userInfo) {
-  //       return;
-  //     }
-  //
-  //     const getUserResponse = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
-  //
-  //     if(getUserResponse.data.getUser) {
-  //       console.log("User already exists in the database 🚀");
-  //       return;
-  //     }
-  //
-  //     const newUser = {
-  //       id: userInfo.attributes.sub,
-  //       username: userInfo.username,
-  //       email: userInfo.attributes.email,
-  //       imageUri: getRandomImage(),
-  //
-  //     }
-  //
-  //
-  //     // get currently authenticated user
-  //
-  //     // check if the user exists in the database, if it does not, meaning it is newly registered user, then please create a new user in the database
-  //
-  //     await API.graphql(graphqlOperation(createUser, {input: newUser}));
-  //   }
-  //
-  //   fetchUser();
-  // }, []);
+    fetchUser();
+  }, []);
 
 
   return (
-    // <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-    //   <StatusBar style="light" />
-    //     <RootNavigation />
-    // </SafeAreaView>
+    <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <StatusBar style="light" />
+        <RootNavigation />
+    </SafeAreaView>
 
-      <View style={styles.container}>
-        <Camera style={styles.camera} type={type}>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => {
-                  setType(
-                      type === Camera.Constants.Type.back
-                          ? Camera.Constants.Type.front
-                          : Camera.Constants.Type.back
-                  );
-                }}>
-              <Text style={styles.text}> Flip </Text>
-            </TouchableOpacity>
-          </View>
-        </Camera>
-      </View>
+      // <View style={styles.container}>
+      //   <Camera style={styles.camera} type={type}>
+      //   </Camera>
+      // </View>
 
 
   );

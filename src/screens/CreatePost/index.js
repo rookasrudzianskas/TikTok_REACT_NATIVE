@@ -13,9 +13,11 @@ const CreatePost = () => {
 
     return (
         <View style={styles.container}>
-            <TextInput numberOfLines={5} placeholder={"Description"} value={description} onTextChange={setDescription} style={styles.textInput} />
+            <TextInput numberOfLines={5} placeholder={"Description"} value={description} onChangeText={setDescription} style={styles.textInput} />
             <TouchableOpacity style={styles.button} activeOpacity={0.8} onPress={onPublish} >
-                <Text>Publish</Text>
+                <View style={styles.button}>
+                     <Text style={styles.buttonText}>Publish</Text>
+                </View>
             </TouchableOpacity>
         </View>
     );

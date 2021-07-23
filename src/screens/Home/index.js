@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, FlatList, Dimensions} from 'react-native';
 import Post from "../../components/Post";
 import posts from "../../data/posts";
@@ -6,6 +6,16 @@ import posts from "../../data/posts";
 
 
 const Home = () => {
+
+    useEffect(() => {
+        const fetchPost = () => {
+            // fetch all the posts
+
+        }
+
+        fetchPost();
+
+    }, []);
 
     return (
         <View>

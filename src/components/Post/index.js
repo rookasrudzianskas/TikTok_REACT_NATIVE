@@ -46,17 +46,17 @@ const Post = ({post}) => {
                         <View style={styles.iconContainer}>
                             <AntDesign name="heart" size={40} color="white" />
                             {/*// <AntDesign name="hearto" size={24} color="black" />*/}
-                            <Text style={styles.statsLabel}>123</Text>
+                            <Text style={styles.statsLabel}>{post.likes}</Text>
                         </View>
 
                         <View style={styles.iconContainer}>
                             <FontAwesome name="commenting" size={40} color="white" />
-                            <Text style={styles.statsLabel}>123</Text>
+                            <Text style={styles.statsLabel}>{post.comments}</Text>
                         </View>
 
                         <View style={styles.iconContainer}>
                             <MaterialCommunityIcons name="share-all" size={40} color="white" />
-                            <Text style={styles.statsLabel}>123</Text>
+                            <Text style={styles.statsLabel}>{post.shares}</Text>
                         </View>
                 </View>
 

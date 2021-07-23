@@ -10,7 +10,6 @@ import { withAuthenticator } from 'aws-amplify-react-native'
 import {Auth, API, graphqlOperation} from "aws-amplify";
 import {getUser} from "./src/graphql/queries";
 import {createUser} from "./src/graphql/mutations";
-import { Camera } from 'expo-camera';
 
 
 Amplify.configure(config);
@@ -29,24 +28,6 @@ function App() {
   const getRandomImage = () => {
     return randomImages[Math.floor(Math.random() * randomImages.length)];
   }
-
-  const [hasPermission, setHasPermission] = useState(null);
-  const [type, setType] = useState(Camera.Constants.Type.back);
-
-  useEffect(() => {
-    (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
-    })();
-  }, []);
-
-
-    // if (hasPermission === null) {
-    //     return <View />;
-    // }
-    // if (hasPermission === false) {
-    //     return <Text>No access to camera</Text>;
-    // }
 
 
   useEffect(() => {
@@ -91,37 +72,13 @@ function App() {
         <RootNavigation />
     </SafeAreaView>
 
-      // <View style={styles.container}>
-      //   <Camera style={styles.camera} type={type}>
-      //   </Camera>
-      // </View>
 
 
   );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    camera: {
-        flex: 1,
-    },
-    buttonContainer: {
-        flex: 1,
-        backgroundColor: 'transparent',
-        flexDirection: 'row',
-        margin: 20,
-    },
-    button: {
-        flex: 0.1,
-        alignSelf: 'flex-end',
-        alignItems: 'center',
-    },
-    text: {
-        fontSize: 18,
-        color: 'white',
-    },
+
 });
 
 export default withAuthenticator(App)

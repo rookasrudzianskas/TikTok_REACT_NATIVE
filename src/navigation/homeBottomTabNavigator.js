@@ -6,6 +6,7 @@ import Entypo from "react-native-vector-icons/Entypo";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import PlusIcon from "../../assets/images/plus-icon.png";
+import Cameras from "../screens/Camera";
 
 const Tab = createBottomTabNavigator();
 
@@ -33,14 +34,14 @@ const HomeBottomTabNavigator = () => {
                 }}
                 component={() => <Text>Search</Text>} />
             <Tab.Screen
-                name={"Rokas"}
+                name={"Upload"}
                 options={{
                    tabBarIcon: ({color}) => (
                        <Image source={PlusIcon} style={{height: 30, resizeMode: 'contain'}} />
                    ),
                     tabBarLabel: () => null,
                 }}
-                component={Home} />
+                component={Cameras} />
             <Tab.Screen
                 name={"Messages"}
                 options={{

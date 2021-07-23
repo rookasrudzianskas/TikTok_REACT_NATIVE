@@ -28,7 +28,7 @@ const CreatePost = () => {
     }
 
     useEffect(() => {
-
+        uploadToStorage(route.params.videoUri);
     }, []);
 
     const onPublish = () => {

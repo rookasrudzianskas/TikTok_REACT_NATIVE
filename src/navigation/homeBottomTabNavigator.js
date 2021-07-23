@@ -2,18 +2,66 @@ import React from 'react';
 import {View, Text} from "react-native";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
+import Entypo from "react-native-vector-icons/Entypo";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const Tab = createBottomTabNavigator();
 
 const HomeBottomTabNavigator = () => {
     return (
-        <Tab.Navigator>
-            <Tab.Screen name={"Home"} component={Home} />
-            <Tab.Screen name={"Search"} component={Home} />
-            <Tab.Screen name={"Upload"} component={Home} />
-            <Tab.Screen name={"Messages"} component={Home} />
-            <Tab.Screen name={"Inbox"} component={Home} />
-            <Tab.Screen name={"Profile"} component={Home} />
+        <Tab.Navigator tabBarOptions={{
+            tabStyle: {
+                backgroundColor: "#000",
+            },
+            activeTintColor: '#fff',
+        }}>
+            <Tab.Screen
+                name={"Home"}
+                options={{
+                    tabBarIcon: ({color}) => (
+                        <Entypo name="home" size={24} color={color} />
+                    )
+                }}
+                component={Home} />
+            <Tab.Screen
+                name={"Search"}
+                options={{
+                    tabBarIcon: ({color}) => (
+                        <AntDesign name="search1" size={24} color={color} />                    )
+                }}
+                component={Home} />
+            <Tab.Screen
+                name={"Upload"}
+                options={{
+                    tabBarIcon: ({color}) => (
+                        <Entypo name="home" size={24} color={color} />
+                    )
+                }}
+                component={Home} />
+            <Tab.Screen
+                name={"Messages"}
+                options={{
+                    tabBarIcon: ({color}) => (
+                        <Entypo name="chat" size={24} color={color} />                    )
+                }}
+                component={Home} />
+
+            <Tab.Screen
+                name={"Inbox"}
+                options={{
+                    tabBarIcon: ({color}) => (
+                        <MaterialIcons name="inbox" size={24} color={color} />                    )
+                }}
+                component={Home} />
+
+            <Tab.Screen
+                name={"Profile"}
+                options={{
+                    tabBarIcon: ({color}) => (
+                        <AntDesign name="profile" size={24} color={color} />                    )
+                }}
+                component={Home} />
         </Tab.Navigator>
     );
 };

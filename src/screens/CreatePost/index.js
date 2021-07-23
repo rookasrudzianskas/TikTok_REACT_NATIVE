@@ -19,7 +19,7 @@ const CreatePost = () => {
 
             const blob = await response.blob();
 
-            const filename = 'filename.mp4';
+            const filename = `${uuidv4()}.mp4`;
             const s3Response = await Storage.put(filename, blob);
 
             console.log(s3Response);

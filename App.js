@@ -17,6 +17,13 @@ function App() {
   useEffect(() => {
     const fetchUser = async() => {
       const userInfo = await Auth.currentAuthenticatedUser({bypassCache: true});
+
+      if(!userInfo) {
+        return;
+      }
+
+
+
       // get currently authenticated user
 
       // check if the user exists in the database, if it does not, meaning it is newly registered user, then please create a new user in the database

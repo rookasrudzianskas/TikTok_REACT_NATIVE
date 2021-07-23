@@ -9,6 +9,13 @@ const CreatePost = () => {
 
     const uploadToStorage = async(imagePath) => {
         try {
+            const response = await fetch(imagePath);
+
+            const blob = await response.blob();
+
+            const filename = 'filename.pm4';
+            const s3Response = await Storage.put(filename, blob);
+
 
         } catch (e) {
             console.log(e);

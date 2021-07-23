@@ -46,7 +46,11 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 16,
         marginLeft: 5,
-    }
+    },
+    // right container goes in here
+    profilePictureContainer: {
+
+    },
 });
 
 export default styles;

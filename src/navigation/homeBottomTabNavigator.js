@@ -31,7 +31,7 @@ const HomeBottomTabNavigator = () => {
                     tabBarIcon: ({color}) => (
                         <AntDesign name="search1" size={24} color={color} />                    )
                 }}
-                component={Home} />
+                component={() => <Text>Search</Text>} />
             <Tab.Screen
                 name={"Rokas"}
                 options={{

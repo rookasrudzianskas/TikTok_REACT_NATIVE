@@ -29,8 +29,11 @@ const Cameras = () => {
     const onRecord = async () => {
         if (isRecording) {
             camera.current.stopRecording();
+            setIsRecording(false);
         } else {
+            setIsRecording(true);
             const data = await camera.current.recordAsync();
+            console.log(data);
         }
     }
 

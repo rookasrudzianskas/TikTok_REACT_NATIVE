@@ -50,6 +50,7 @@ function App() {
         username: userInfo.username,
         email: userInfo.attributes.email,
         imageUri: getRandomImage(),
+
       }
 
 

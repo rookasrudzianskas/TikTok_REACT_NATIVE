@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         paddingBottom: 20,
         paddingHorizontal: 20,
+        alignItems: 'center',
     },
     songName: {
         color: "#fff",

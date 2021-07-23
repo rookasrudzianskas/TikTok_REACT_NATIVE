@@ -37,7 +37,8 @@ const HomeBottomTabNavigator = () => {
                 options={{
                    tabBarIcon: ({color}) => (
                        <Image source={PlusIcon} style={{height: 30, resizeMode: 'contain'}} />
-                   )
+                   ),
+                    tabBarLabel: () => null,
                 }}
                 component={Home} />
             <Tab.Screen

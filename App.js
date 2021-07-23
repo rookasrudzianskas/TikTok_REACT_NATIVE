@@ -9,7 +9,7 @@ export default function App() {
 
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar style="auto" />
         <RootNavigation />
     </SafeAreaView>

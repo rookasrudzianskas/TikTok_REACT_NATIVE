@@ -14,8 +14,8 @@ const RootNavigation = () => {
             <Stack.Navigator screenOptions={{
                 headerShown: false,
             }}>
-                <Stack.Screen name="Something Cool" component={HomeBottomTabNavigator} />
-                <Stack.Screen name="CreatePost" component={CreatePost} />
+                <Stack.Screen name="Home" component={HomeBottomTabNavigator} />
+                <Stack.Screen options={{headerShown: true}} name="Post" component={CreatePost} />
             </Stack.Navigator>
         </NavigationContainer>
     )

@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
     },
     buttonStop: {
         alignSelf: 'center',
-        marginVertical: 10,
-        width: 35,
-        height: 35,
+        marginVertical: 20,
+        width: 30,
+        height: 30,
         backgroundColor: "#ff4343",
         borderRadius: 3,
     }

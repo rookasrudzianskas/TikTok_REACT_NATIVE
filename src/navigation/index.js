@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 const RootNavigation = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{
+            <Stack.Navigator initialRouteName={"Post"} screenOptions={{
                 headerShown: false,
             }}>
                 <Stack.Screen name="Home" component={HomeBottomTabNavigator} />

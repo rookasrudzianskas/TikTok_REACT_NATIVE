@@ -40,10 +40,17 @@ const Cameras = () => {
     return (
 
         <View style={styles.container}>
-          <Camera style={styles.preview} ref={camera} type={type} />
-            <TouchableOpacity onPress={onRecord} activeOpacity={0.8} style={isRecording ? styles.buttonStop : styles.buttonRecord}>
+          <Camera onRecordingStart={() => setIsRecording(true)} onRecordingEnd={() => setIsRecording(false)} style={styles.preview} ref={camera} type={type} />
+            <View style={styles.row}>
+                <TouchableOpacity style={styles.flip}>
+                    <Text style={{alignSelf: 'center', marginTop: 16}}>FLIP</Text>
+                </TouchableOpacity>
 
-            </TouchableOpacity>
+                <TouchableOpacity onPress={onRecord} activeOpacity={0.8} style={isRecording ? styles.buttonStop : styles.buttonRecord}>
+
+                </TouchableOpacity>
+
+            </View>
 
         </View>
     );

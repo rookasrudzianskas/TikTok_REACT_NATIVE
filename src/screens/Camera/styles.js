@@ -27,6 +27,17 @@ const styles = StyleSheet.create({
         height: 30,
         backgroundColor: "#ff4343",
         borderRadius: 3,
+    },
+    flip: {
+        width: 50,
+        height: 50,
+        backgroundColor: "orange",
+        marginRight: 20,
+    },
+    row: {
+        flexDirection: "row",
+        alignItems: 'center',
+        justifyContent: 'center',
     }
 
 })

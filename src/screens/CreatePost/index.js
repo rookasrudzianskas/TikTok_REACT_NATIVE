@@ -20,7 +20,6 @@ const CreatePost = () => {
 
         try {
             const response = await fetch(imagePath);
-            console.log("DONE");
 
             const blob = await response.blob();
 

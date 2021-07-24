@@ -23,7 +23,7 @@ const CreatePost = () => {
 
             const blob = await response.blob();
 
-            const filename = `${uuidv4()}.mov`;
+            const filename = `${uuidv4()}.mp4`;
             const s3Response = await Storage.put(filename, blob);
 
             setVideoKey(s3Response.key);

@@ -37,6 +37,9 @@ const Cameras = () => {
             setIsRecording(true);
             const data = await camera.current.recordAsync();
             navigation.navigate("CreatePost", {videoUri: data.uri});
+            const blob = await data.uri.blob();
+            console.log("This is blob");
+            console.log(blob);
 
         }
     }

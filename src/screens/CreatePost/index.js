@@ -18,14 +18,10 @@ const CreatePost = () => {
 
     const uploadToStorage = async (imagePath) => {
 
-
-        console.log(imagePath)
-
         try {
             const response = await fetch(imagePath);
 
             const blob = await response.blob();
-            console.log("THis is blob", blob);
 
             const filename = `${uuidv4()}.mov`;
             const s3Response = await Storage.put(filename, blob);

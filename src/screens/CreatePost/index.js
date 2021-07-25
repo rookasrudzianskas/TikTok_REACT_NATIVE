@@ -18,6 +18,7 @@ const CreatePost = () => {
     const navigation = useNavigation();
     const navigation = useNavigation();
     const navigation = useNavigation();
+    const navigation = useNavigation();
 
     const uploadToStorage = async (imagePath) => {
 

@@ -15,7 +15,6 @@ const CreatePost = () => {
     const [videoKey, setVideoKey] = useState(null);
     const route = useRoute();
     const navigation = useNavigation();
-    const navigation = useNavigation();
 
     const uploadToStorage = async (imagePath) => {
 

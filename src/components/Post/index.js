@@ -39,9 +39,7 @@ const Post = (props) => {
             return post.videoUri;
         }
 
-        const response = await Storage.get(post.videoUri);
-        console.log(response);
-        return "";
+        return await Storage.get(post.videoUri);
     }
 
 

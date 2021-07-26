@@ -65,6 +65,7 @@ const CreatePost = () => {
         }
 
         // create post in the database
+        // create post in the database
     }
 
     return (

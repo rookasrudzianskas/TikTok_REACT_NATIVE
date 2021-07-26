@@ -41,7 +41,9 @@ const Post = (props) => {
 
         const response = await Storage.get(post.videoUri);
         console.log(response);
+        return "";
     }
+
 
     return (
         <View style={styles.container}>

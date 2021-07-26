@@ -54,7 +54,7 @@ const Post = (props) => {
                     resizeMode="cover"
                     onError={(e) => console.log(e)}
                     source={{
-                        uri: post.videoUri,
+                        uri: getVideoUri(),
                     }}
                     isLooping
                 />

@@ -34,10 +34,13 @@ const Post = (props) => {
     }
 
 
-    const getVideoUri = () => {
-        if(post.videoUri.startsWith('http')) {
+    const getVideoUri = async () => {
+        if (post.videoUri.startsWith('http')) {
             return post.videoUri;
         }
+
+        const response = await Storage.get(post.videoUri);
+        console.log(response);
     }
 
     return (

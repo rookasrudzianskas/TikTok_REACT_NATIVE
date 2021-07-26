@@ -42,6 +42,9 @@ const Post = (props) => {
         return await Storage.get(post.videoUri);
     }
 
+        const uri = await getVideoUri();
+        console.log(uri)
+
 
     return (
         <View style={styles.container}>
@@ -54,7 +57,7 @@ const Post = (props) => {
                     resizeMode="cover"
                     onError={(e) => console.log(e)}
                     source={{
-                        uri: getVideoUri(),
+                        uri
                     }}
                     isLooping
                 />

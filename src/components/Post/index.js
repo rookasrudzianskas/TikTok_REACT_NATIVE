@@ -33,6 +33,13 @@ const Post = (props) => {
         setIsLiked(!isLiked);
     }
 
+
+    const getVideoUri = () => {
+        if(post.videoUri.startsWith('http')) {
+            return post.videoUri;
+        }
+    }
+
     return (
         <View style={styles.container}>
             <TouchableWithoutFeedback onPress={onPlayPausePress}>

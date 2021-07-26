@@ -58,7 +58,7 @@ const CreatePost = () => {
 
 
             const response = await API.graphql(graphqlOperation(createPost, {input: newPost}));
-            navigation.navigate("Home");
+            navigation.navigate("Home", {screen: "Home"});
 
         } catch (e) {
             console.log(e);

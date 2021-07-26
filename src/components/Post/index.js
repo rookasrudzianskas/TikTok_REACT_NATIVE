@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from "./styles.js";
 import {View, StyleSheet, Image, Button, TouchableWithoutFeedback, Text, TouchableOpacity} from 'react-native';
 import { Video, AVPlaybackStatus } from 'expo-av';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { Entypo } from '@expo/vector-icons';
 import AntDesign from "react-native-vector-icons/AntDesign";
@@ -16,6 +16,7 @@ const Post = (props) => {
     const video = React.useRef(null);
     const [paused, setPaused] = useState(true);
     const [isLiked, setIsLiked] = useState(false);
+    const [videoUri, setVideoUri] = useState("");
 
     const [post, setPost] = useState(props.post);
 
@@ -36,14 +37,16 @@ const Post = (props) => {
 
     const getVideoUri = async () => {
         if (post.videoUri.startsWith('http')) {
-            return post.videoUri;
+            setVideoUri(post.videoUri);
+            return;
         }
+        setVideoUri(await Storage.get(post.videoUri));
+    };
 
-        return await Storage.get(post.videoUri);
-    }
+    useEffect(() => {
+        getVideoUri();
+    })
 
-        const uri = await getVideoUri();
-        console.log(uri)
 
 
     return (
@@ -57,7 +60,7 @@ const Post = (props) => {
                     resizeMode="cover"
                     onError={(e) => console.log(e)}
                     source={{
-                        uri
+                        uri: videoUri,
                     }}
                     isLooping
                 />
